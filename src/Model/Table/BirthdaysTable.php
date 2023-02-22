@@ -47,6 +47,8 @@ class BirthdaysTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER',
         ]);
+
+        $this->hasMany('BirthdayItems');
     }
 
     /**
