@@ -49,6 +49,7 @@ class BirthdaysTable extends Table
         ]);
 
         $this->hasMany('BirthdayItems');
+        $this->hasMany('BirthdayGuests');
     }
 
     /**
