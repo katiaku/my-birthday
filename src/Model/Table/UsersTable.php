@@ -42,6 +42,7 @@ class UsersTable extends Table
         $this->setPrimaryKey('id');
 
         $this->hasOne('Birthdays');
+        $this->hasOne('BirthdayGuests');
     }
 
     /**
