@@ -11,6 +11,9 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
+ * @property \App\Model\Table\BirthdayGuestsTable&\Cake\ORM\Association\HasMany $BirthdayGuests
+ * @property \App\Model\Table\BirthdaysTable&\Cake\ORM\Association\HasMany $Birthdays
+ *
  * @method \App\Model\Entity\User newEmptyEntity()
  * @method \App\Model\Entity\User newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
@@ -41,8 +44,12 @@ class UsersTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->hasOne('Birthdays');
-        $this->hasOne('BirthdayGuests');
+        $this->hasMany('BirthdayGuests', [
+            'foreignKey' => 'user_id',
+        ]);
+        $this->hasMany('Birthdays', [
+            'foreignKey' => 'user_id',
+        ]);
     }
 
     /**
@@ -86,6 +93,12 @@ class UsersTable extends Table
             ->date('birthDate')
             ->requirePresence('birthDate', 'create')
             ->notEmptyDate('birthDate');
+
+        $validator
+            ->scalar('color')
+            ->maxLength('color', 7)
+            ->requirePresence('color', 'create')
+            ->notEmptyString('color');
 
         return $validator;
     }
