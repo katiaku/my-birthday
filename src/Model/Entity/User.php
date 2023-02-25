@@ -15,6 +15,10 @@ use Cake\ORM\Entity;
  * @property string $email
  * @property string $password
  * @property \Cake\I18n\FrozenDate $birthDate
+ * @property string $color
+ *
+ * @property \App\Model\Entity\Birthday $birthday
+ * @property \App\Model\Entity\BirthdayGuest $birthday_guest
  */
 class User extends Entity
 {
@@ -34,6 +38,9 @@ class User extends Entity
         'email' => true,
         'password' => true,
         'birthDate' => true,
+        'color' => true,
+        'birthday' => true,
+        'birthday_guest' => true,
     ];
 
     /**

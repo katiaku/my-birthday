@@ -17,6 +17,7 @@
                     <th><?= $this->Paginator->sort('userName') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('birthDate') ?></th>
+                    <th><?= $this->Paginator->sort('color') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -29,6 +30,7 @@
                     <td><?= h($user->userName) ?></td>
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->birthDate) ?></td>
+                    <td><?= h($user->color) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

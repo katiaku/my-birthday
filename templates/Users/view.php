@@ -35,6 +35,18 @@
                     <td><?= h($user->email) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Color') ?></th>
+                    <td><?= h($user->color) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Birthday') ?></th>
+                    <td><?= $user->has('birthday') ? $this->Html->link($user->birthday->title, ['controller' => 'Birthdays', 'action' => 'view', $user->birthday->id]) : '' ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Birthday Guest') ?></th>
+                    <td><?= $user->has('birthday_guest') ? $this->Html->link($user->birthday_guest->name, ['controller' => 'BirthdayGuests', 'action' => 'view', $user->birthday_guest->id]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>

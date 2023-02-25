@@ -25,7 +25,8 @@ class UsersFixture extends TestFixture
                 'userName' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
-                'birthDate' => '2023-02-15',
+                'birthDate' => '2023-02-25',
+                'color' => 'Lorem',
             ],
         ];
         parent::init();
