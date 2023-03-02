@@ -49,6 +49,7 @@ class BirthdayGuestsController extends AppController
      */
     public function add()
     {
+        $this->loadModel('BirthdayGuests');
         $birthdayGuest = $this->BirthdayGuests->newEmptyEntity();
         if ($this->request->is('post')) {
             $birthdayGuest = $this->BirthdayGuests->patchEntity($birthdayGuest, $this->request->getData());
