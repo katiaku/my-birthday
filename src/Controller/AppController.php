@@ -41,8 +41,11 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        $this->loadComponent('Authentication.Authentication');
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+
+        $this->Authentication->allowUnauthenticated(['add', 'login']);
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
