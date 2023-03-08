@@ -11,11 +11,18 @@ namespace App\Controller;
  */
 class BirthdaysController extends AppController
 {
+    public function initialize(): void
+    {
+        parent::initialize();
+        $this->loadComponent('RequestHandler');
+    }
+
     /**
      * Index method
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+
     public function index()
     {
         $this->paginate = [
@@ -24,6 +31,8 @@ class BirthdaysController extends AppController
         $birthdays = $this->paginate($this->Birthdays);
 
         $this->set(compact('birthdays'));
+
+        $this->viewBuilder()->setOption('serialize', ['birthdays']);
     }
 
     /**
