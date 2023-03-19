@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\ORM\Table;
+
 /**
  * Birthdays Controller
  *
@@ -11,6 +13,7 @@ namespace App\Controller;
  */
 class BirthdaysController extends AppController
 {
+
     public function initialize(): void
     {
         parent::initialize();
@@ -33,6 +36,8 @@ class BirthdaysController extends AppController
         $this->set(compact('birthdays'));
 
         $this->viewBuilder()->setOption('serialize', ['birthdays']);
+
+        $this->Birthdays->find('all', ['contain' => ['BirthdayItems', 'BirthdayGuests']]);
     }
 
     /**
