@@ -1,4 +1,4 @@
-# CakePHP Birthday Planner and Task Manager for kids
+# CakePHP Birthday Planner and Task Manager for Kids
 
 ## Installation
 
