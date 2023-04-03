@@ -39,14 +39,6 @@
                     <td><?= h($user->color) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Birthday') ?></th>
-                    <td><?= $user->has('birthday') ? $this->Html->link($user->birthday->title, ['controller' => 'Birthdays', 'action' => 'view', $user->birthday->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Birthday Guest') ?></th>
-                    <td><?= $user->has('birthday_guest') ? $this->Html->link($user->birthday_guest->name, ['controller' => 'BirthdayGuests', 'action' => 'view', $user->birthday_guest->id]) : '' ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
@@ -54,7 +46,77 @@
                     <th><?= __('BirthDate') ?></th>
                     <td><?= h($user->birthDate) ?></td>
                 </tr>
+                <tr>
+                    <th><?= __('Is Active') ?></th>
+                    <td><?= $user->is_active ? __('Yes') : __('No'); ?></td>
+                </tr>
             </table>
+            <div class="related">
+                <h4><?= __('Related Birthday Guests') ?></h4>
+                <?php if (!empty($user->birthday_guests)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Name') ?></th>
+                            <th><?= __('Surname') ?></th>
+                            <th><?= __('Email') ?></th>
+                            <th><?= __('Birthday Id') ?></th>
+                            <th><?= __('User Id') ?></th>
+                            <th><?= __('Created') ?></th>
+                            <th><?= __('Modified') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($user->birthday_guests as $birthdayGuests) : ?>
+                        <tr>
+                            <td><?= h($birthdayGuests->id) ?></td>
+                            <td><?= h($birthdayGuests->name) ?></td>
+                            <td><?= h($birthdayGuests->surname) ?></td>
+                            <td><?= h($birthdayGuests->email) ?></td>
+                            <td><?= h($birthdayGuests->birthday_id) ?></td>
+                            <td><?= h($birthdayGuests->user_id) ?></td>
+                            <td><?= h($birthdayGuests->created) ?></td>
+                            <td><?= h($birthdayGuests->modified) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'BirthdayGuests', 'action' => 'view', $birthdayGuests->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'BirthdayGuests', 'action' => 'edit', $birthdayGuests->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'BirthdayGuests', 'action' => 'delete', $birthdayGuests->id], ['confirm' => __('Are you sure you want to delete # {0}?', $birthdayGuests->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
+            <div class="related">
+                <h4><?= __('Related Birthdays') ?></h4>
+                <?php if (!empty($user->birthdays)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Title') ?></th>
+                            <th><?= __('User Id') ?></th>
+                            <th><?= __('Day') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($user->birthdays as $birthdays) : ?>
+                        <tr>
+                            <td><?= h($birthdays->id) ?></td>
+                            <td><?= h($birthdays->title) ?></td>
+                            <td><?= h($birthdays->user_id) ?></td>
+                            <td><?= h($birthdays->day) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Birthdays', 'action' => 'view', $birthdays->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Birthdays', 'action' => 'edit', $birthdays->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Birthdays', 'action' => 'delete', $birthdays->id], ['confirm' => __('Are you sure you want to delete # {0}?', $birthdays->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

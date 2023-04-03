@@ -5,8 +5,7 @@
  */
 ?>
 <div class="users index content">
-    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button']) ?>
-    <?= $this->Html->link(__('Logout'), ['action' => 'logout'], ['class' => 'button float-right']) ?>
+    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Users') ?></h3>
     <div class="table-responsive">
         <table>
@@ -19,6 +18,7 @@
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('birthDate') ?></th>
                     <th><?= $this->Paginator->sort('color') ?></th>
+                    <th><?= $this->Paginator->sort('is_active') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -32,6 +32,7 @@
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->birthDate) ?></td>
                     <td><?= h($user->color) ?></td>
+                    <td><?= h($user->is_active) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
