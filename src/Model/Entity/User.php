@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App\Model\Entity;
 
-use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -17,9 +16,10 @@ use Cake\ORM\Entity;
  * @property string $password
  * @property \Cake\I18n\FrozenDate $birthDate
  * @property string $color
+ * @property bool $is_active
  *
- * @property \App\Model\Entity\Birthday $birthday
- * @property \App\Model\Entity\BirthdayGuest $birthday_guest
+ * @property \App\Model\Entity\BirthdayGuest[] $birthday_guests
+ * @property \App\Model\Entity\Birthday[] $birthdays
  */
 class User extends Entity
 {
@@ -40,8 +40,9 @@ class User extends Entity
         'password' => true,
         'birthDate' => true,
         'color' => true,
-        'birthday' => true,
-        'birthday_guest' => true,
+        'is_active' => true,
+        'birthday_guests' => true,
+        'birthdays' => true,
     ];
 
     /**
@@ -52,10 +53,4 @@ class User extends Entity
     protected $_hidden = [
         'password',
     ];
-
-    protected function _setPassword(string $password)
-    {
-        $hasher = new DefaultPasswordHasher();
-        return $hasher->hash($password);
-    }
 }

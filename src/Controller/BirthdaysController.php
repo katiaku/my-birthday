@@ -37,9 +37,9 @@ class BirthdaysController extends AppController
 
         $this->viewBuilder()->setOption('serialize', ['birthdays']);
 
-        /* $this->Birthdays->find('all')
+        $this->Birthdays->find('all')
             ->contain(['BirthdayItems', 'BirthdayGuests']);
-        */
+
 
         /* Obtener todos los Birthdays entre dos fechas concretas
         $this->Birthdays->find('all')
