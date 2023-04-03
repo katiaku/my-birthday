@@ -31,7 +31,7 @@ class Birthday extends Entity
         'user_id' => true,
         'day' => true,
         'user' => true,
-        'birthday_item' => true,
-        'birthday_guest' => true
+        'birthday_items' => true,
+        'birthday_guests' => true
     ];
 }
