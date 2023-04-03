@@ -37,33 +37,47 @@ class BirthdaysController extends AppController
 
         $this->viewBuilder()->setOption('serialize', ['birthdays']);
 
-        $this->Birthdays->find('all', ['contain' => ['BirthdayItems', 'BirthdayGuests']]);
-
-        // Obtener todos los Birthdays entre dos fechas concretas
-        $this->Birthdays->find('all')
-            ->where(['created >=' => '01-01-2023'], ['created <=' => '31-03-2023'])
+        /* $this->Birthdays->find('all')
             ->contain(['BirthdayItems', 'BirthdayGuests']);
+        */
 
-        // Obtener todos los Birthdays mayores que una fecha dada o menores que una fecha dada
+        /* Obtener todos los Birthdays entre dos fechas concretas
         $this->Birthdays->find('all')
-            ->where('OR' => ['created >=' => '01-01-2023'], ['created <=' => '31-03-2023'])
-            ->contain(['BirthdayItems', 'BirthdayGuests']);
+            ->where(['created >=' => '01-01-2023'], ['created <=' => '31-03-2023']);
+        */
 
-        // Obtener todos los Birthdays con un Guest determinado
-        $this->Birthdays->findAllByBirthdayGuest('Ann Smith'); // cambiar
+        /* Obtener todos los Birthdays mayores que una fecha dada o menores que una fecha dada
+        $this->Birthdays->find('all')
+            ->where(['created >=' => '01-01-2023'])
+            ->orWhere(['created <=' => '31-03-2023']);
+        */
 
-        // Obtener todos los Birthdays con un Item determinado
-        $this->Birthdays->findAllByBirthdayItem('Lego City'); // cambiar
+        /* Obtener todos los Birthdays con un Guest determinado
+        $this->Birthdays->find('all')
+            ->where(['birthday_guests' => 'Ann Smith']);
+        */
 
-        // Obtener todos los Birthdays sin Items
-        $this->Birthdays->findAllByBirthdayItem(null); // cambiar
+        /* Obtener todos los Birthdays con un Item determinado
+        $this->Birthdays->find('all')
+            ->where(['birthday_items' => 'Lego City']);
+        */
 
-        // Obtener todos los BirthdayItems y BirthdayGuests para un Birthday determinado
+        /* Obtener todos los Birthdays sin Items
+        $this->Birthdays->find('all')
+            ->where(['birthday_items IS' => NULL]);
+        */
+
+        /* Obtener todos los BirthdayItems y BirthdayGuests para un Birthday determinado
         $this->Birthdays->findById('2')
             ->contain(['BirthdayItems', 'BirthdayGuests']);
+        */
 
-        // Obtener el último Birthday creado por un User determinado
-        $this->Birthdays->findAllByUser('John Doe')->find('recent'); // cambiar a ->first() y el orden
+        /* Obtener el último Birthday creado por un User determinado
+        $this->Birthdays->find('all')
+            ->where(['user' => 'John Doe'])
+            ->order(['created' => 'DESC'])
+            ->first();
+        */
     }
 
     /**
