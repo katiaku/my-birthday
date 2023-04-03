@@ -33,51 +33,51 @@ class BirthdaysController extends AppController
         ];
         $birthdays = $this->paginate($this->Birthdays);
 
-        $this->set(compact('birthdays'));
-
-        $this->viewBuilder()->setOption('serialize', ['birthdays']);
-
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->contain(['BirthdayItems', 'BirthdayGuests']);
 
 
         /* Obtener todos los Birthdays entre dos fechas concretas
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['created >=' => '01-01-2023'], ['created <=' => '31-03-2023']);
         */
 
         /* Obtener todos los Birthdays mayores que una fecha dada o menores que una fecha dada
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['created >=' => '01-01-2023'])
             ->orWhere(['created <=' => '31-03-2023']);
         */
 
         /* Obtener todos los Birthdays con un Guest determinado
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['birthday_guests' => 'Ann Smith']);
         */
 
         /* Obtener todos los Birthdays con un Item determinado
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['birthday_items' => 'Lego City']);
         */
 
         /* Obtener todos los Birthdays sin Items
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['birthday_items IS' => NULL]);
         */
 
         /* Obtener todos los BirthdayItems y BirthdayGuests para un Birthday determinado
-        $this->Birthdays->findById('2')
+        $birthdays = $this->Birthdays->findById('2')
             ->contain(['BirthdayItems', 'BirthdayGuests']);
         */
 
         /* Obtener el último Birthday creado por un User determinado
-        $this->Birthdays->find('all')
+        $birthdays = $this->Birthdays->find('all')
             ->where(['user' => 'John Doe'])
             ->order(['created' => 'DESC'])
             ->first();
         */
+
+        $this->set(compact('birthdays'));
+
+        $this->viewBuilder()->setOption('serialize', ['birthdays']);
     }
 
     /**
