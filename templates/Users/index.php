@@ -33,7 +33,7 @@
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->birthDate) ?></td>
                     <td><?= h($user->color) ?></td>
-                    <td><?= h($user->is_active) ?></td>
+                    <td><?= $this->IsActive->isActiveBadge($user->is_active) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

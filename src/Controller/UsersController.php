@@ -11,12 +11,13 @@ namespace App\Controller;
  */
 class UsersController extends AppController
 {
+
     public function login()
     {
         $result = $this->Authentication->getResult();
         // If the user is logged in send them away.
         if ($result->isValid()) {
-            $target = $this->Authentication->getLoginRedirect() ?? '/home';
+            $target = $this->Authentication->getLoginRedirect() ?? '/users';
             return $this->redirect($target);
         }
         if ($this->request->is('post')) {
@@ -38,6 +39,8 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setHelpers(['IsActive']);
+
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
