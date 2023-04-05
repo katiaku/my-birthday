@@ -24,7 +24,7 @@
                     echo $this->Form->control('password');
                     echo $this->Form->control('birthDate');
                     echo $this->Form->control('color');
-                    echo $this->Form->control('is_active');
+                    //echo $this->Form->control('is_active');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
