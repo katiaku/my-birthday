@@ -1,5 +1,7 @@
 # CakePHP Birthday Planner and Task Manager for kids
 
+<img src="webroot/img/login.png" alt="Login" width="400" height="100">
+
 ## Installation
 
 Download [Composer](https://getcomposer.org/doc/00-intro.md) and install PHP dependencies
