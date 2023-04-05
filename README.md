@@ -1,6 +1,6 @@
 # CakePHP Birthday Planner and Task Manager for kids
 
-<img src="webroot/img/login.png" alt="Login" width="400" height="200">
+<img src="webroot/img/login.png" alt="Login" width="350" height="200">
 
 ## Installation
 
