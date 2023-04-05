@@ -6,6 +6,7 @@
 $this->setLayout('default');
 ?>
 
+<h1 class="text-center fw-bold text-body-secondary">Welcome to your <span style="color: #FFC007">birthday planner</span></h1>
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
@@ -15,13 +16,13 @@ $this->setLayout('default');
                 </div>
                 <div class="card-body border border-2 border-success rounded-bottom">
                     <?= $this->Form->create() ?>
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <?= $this->Form->control('email', ['class' => 'form-control fs-3', 'label' => ['text' => 'Email', 'class' => 'text-body-secondary']]) ?>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <?= $this->Form->control('password', ['class' => 'form-control fs-3', 'label' => ['text' => 'Password', 'class' => 'text-body-secondary']]) ?>
                     </div>
-                    <?= $this->Form->button(__('Login'), ['class' => 'btn btn-warning btn-lg w-100 mt-3 fw-semibold fs-4 text-body-secondary']) ?>
+                    <?= $this->Form->button(__('Login'), ['class' => 'btn btn-warning btn-lg w-100 mt-4 fw-semibold fs-4 text-body-secondary']) ?>
                     <?= $this->Form->end() ?>
                 </div>
             </div>
