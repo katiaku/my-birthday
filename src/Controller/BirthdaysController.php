@@ -70,7 +70,7 @@ class BirthdaysController extends AppController
 
         /* Obtener el último Birthday creado por un User determinado
         $birthdays = $this->Birthdays->find('all')
-            ->where(['user' => 'John Doe'])
+            ->where(['firstName' => 'John'], ['lastName' => 'Doe'])
             ->order(['created' => 'DESC'])
             ->first();
         */
