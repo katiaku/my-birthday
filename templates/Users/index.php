@@ -55,7 +55,7 @@ $this->setLayout('default');
         <p class="text-muted"><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
     </div>
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-warning btn-lg w-100 mt-4 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
-    <?= $this->Html->link(__('Logout'), ['action' => 'logout'], ['class' => 'btn btn-warning btn-lg w-100 mt-4 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
+    <?= $this->Html->link(__('Logout'), ['action' => 'logout'], ['class' => 'btn btn-danger btn-lg w-100 mt-4 fw-semibold fs-4 text-white text-uppercase']) ?>
 </div>
 
 <?= $this->Html->css('/bootstrap/css/bootstrap.min') ?>
