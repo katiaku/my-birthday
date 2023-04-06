@@ -17,10 +17,10 @@ $this->setLayout('default');
                 <div class="card-body border border-2 border-success rounded-bottom">
                     <?= $this->Form->create() ?>
                     <div class="form-group mt-3">
-                        <?= $this->Form->control('email', ['class' => 'form-control fs-3', 'label' => ['text' => 'Email', 'class' => 'text-body-secondary']]) ?>
+                        <?= $this->Form->control('email', ['class' => 'form-control fs-4', 'label' => ['text' => 'Email', 'class' => 'text-body-secondary']]) ?>
                     </div>
                     <div class="form-group mt-3">
-                        <?= $this->Form->control('password', ['class' => 'form-control fs-3', 'label' => ['text' => 'Password', 'class' => 'text-body-secondary']]) ?>
+                        <?= $this->Form->control('password', ['class' => 'form-control fs-4', 'label' => ['text' => 'Password', 'class' => 'text-body-secondary']]) ?>
                     </div>
                     <?= $this->Form->button(__('Login'), ['class' => 'btn btn-warning btn-lg w-100 mt-4 fw-semibold fs-4 text-body-secondary']) ?>
                     <?= $this->Form->end() ?>
