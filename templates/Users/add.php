@@ -15,13 +15,13 @@ $this->setLayout('default');
                     <?= $this->Form->create($user) ?>
                     <fieldset class="mt-3 mb-2 text-secondary">
                         <?php
-                            echo $this->Form->control('firstName', ['class' => 'form-control fs-4', 'label' => __('First Name')]);
-                            echo $this->Form->control('lastName', ['class' => 'form-control fs-4 mt-3', 'label' => __('Last Name')]);
-                            echo $this->Form->control('userName', ['class' => 'form-control fs-4', 'label' => __('Username')]);
-                            echo $this->Form->control('email', ['class' => 'form-control fs-4', 'label' => __('Email')]);
-                            echo $this->Form->control('password', ['class' => 'form-control fs-4', 'label' => __('Password')]);
-                            echo $this->Form->control('birthDate', ['class' => 'form-control fs-4', 'label' => __('Birth Date')]);
-                            echo $this->Form->control('color', ['class' => 'form-control fs-4', 'label' => __('Favorite Color')]);
+                            echo $this->Form->control('firstName', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('lastName', ['class' => 'form-control fs-4 mt-3']);
+                            echo $this->Form->control('userName', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('email', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('password', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('birthDate', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('color', ['class' => 'form-control fs-4']);
                             //echo $this->Form->control('is_active');
                         ?>
                     </fieldset>
