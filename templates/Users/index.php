@@ -6,7 +6,7 @@
 $this->setLayout('default');
 ?>
 
-<div class="users index content border border-2 border-success">
+<div class="users index content border border-2 border-success shadow">
     <h3 class="text-center fw-bold fs-1 text-success"><?= __('Users') ?></h3>
     <div class="table-responsive">
         <table class="table table-borderless table-hover mt-4">
