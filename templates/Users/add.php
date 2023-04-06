@@ -9,7 +9,7 @@ $this->setLayout('default');
 <div class="container">
     <div class="row justify-content-center mt-3">
         <div class="col-md-6">
-            <div class="card mb-5">
+            <div class="card mb-5 shadow">
                 <div class="card-header bg-success py-3 text-white text-center fs-3 fw-semibold"><?= __('Add User') ?></div>
                 <div class="card-body border rounded-bottom border-2 border-success">
                     <?= $this->Form->create($user) ?>
