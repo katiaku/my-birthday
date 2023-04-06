@@ -4,32 +4,45 @@
  * @var \App\Model\Entity\Birthday $birthday
  * @var string[]|\Cake\Collection\CollectionInterface $users
  */
+$this->setLayout('default');
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $birthday->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $birthday->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Birthdays'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="birthdays form content">
-            <?= $this->Form->create($birthday) ?>
-            <fieldset>
-                <legend><?= __('Edit Birthday') ?></legend>
-                <?php
-                    echo $this->Form->control('title');
-                    echo $this->Form->control('user_id', ['options' => $users]);
-                    echo $this->Form->control('day');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div class="card mb-5 shadow">
+                <div class="card-header bg-success py-3">
+                    <h5 class="card-title text-white text-center fs-3 fw-semibold">Edit Birthday</h5>
+                </div>
+                <div class="card-body border rounded-bottom border-2 border-success">
+                    <?= $this->Form->create($birthday) ?>
+                    <fieldset class="mt-3 mb-2 text-secondary">
+                        <div class="form-group mt-3">
+                            <?php echo $this->Form->control('title', ['class' => 'form-control fs-4']); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->Form->control('user_id', ['class' => 'form-control fs-4', 'options' => $users]); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->Form->control('day', ['class' => 'form-control fs-4']); ?>
+                        </div>
+                    </fieldset>
+                    <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-warning btn-lg w-100 mt-2 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
+                    <?= $this->Html->link(__('List Birthdays'), ['action' => 'index'], ['class' => 'btn btn-warning btn-lg w-100 mt-2 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
+                    <?= $this->Form->postLink(
+                        __('Delete'),
+                        ['action' => 'delete', $birthday->id],
+                        ['confirm' => __('Are you sure you want to delete # {0}?', $birthday->id), 'class' => 'btn btn-danger btn-lg w-100 mt-4 fw-semibold fs-4 text-white text-uppercase']
+                    ) ?>
+                    <?= $this->Form->end() ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<?= $this->Html->css('/bootstrap/css/bootstrap.min') ?>
+<?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+<?= $this->Html->script('/bootstrap/css/bootstrap.bundle.min') ?>
+<?= $this->fetch('css') ?>
+<?= $this->fetch('script') ?>

@@ -4,27 +4,34 @@
  * @var \App\Model\Entity\Birthday $birthday
  * @var \Cake\Collection\CollectionInterface|string[] $users
  */
+$this->setLayout('default');
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Birthdays'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="birthdays form content">
-            <?= $this->Form->create($birthday) ?>
-            <fieldset>
-                <legend><?= __('Add Birthday') ?></legend>
-                <?php
-                    echo $this->Form->control('title');
-                    echo $this->Form->control('user_id', ['options' => $users]);
-                    echo $this->Form->control('day');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-6">
+            <div class="card mb-5 shadow">
+                <div class="card-header bg-success py-3 text-white text-center fs-3 fw-semibold"><?= __('Add Birthday') ?></div>
+                <div class="card-body border rounded-bottom border-2 border-success">
+                    <?= $this->Form->create($birthday) ?>
+                    <fieldset class="mt-3 mb-2 text-secondary">
+                        <?php
+                            echo $this->Form->control('title', ['class' => 'form-control fs-4']);
+                            echo $this->Form->control('user_id', ['class' => 'form-control fs-4 mt-3', 'options' => $users]);
+                            echo $this->Form->control('day', ['class' => 'form-control fs-4']);
+                        ?>
+                    </fieldset>
+                    <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-warning btn-lg w-100 mt-2 fw-semibold fs-4 text-body-secondary']) ?>
+                    <?= $this->Html->link(__('List Birthdays'), ['action' => 'index'], ['class' => 'btn btn-warning btn-lg w-100 mt-2 mb-4 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
+                    <?= $this->Form->end() ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<?= $this->Html->css('/bootstrap/css/bootstrap.min') ?>
+<?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+<?= $this->Html->script('/bootstrap/css/bootstrap.bundle.min') ?>
+<?= $this->fetch('css') ?>
+<?= $this->fetch('script') ?>

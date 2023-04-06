@@ -41,7 +41,6 @@ $this->setLayout('default');
                             <?php echo $this->Form->control('is_active'); ?>
                         </div>
                     </fieldset>
-                    <?= $this->Form->end() ?>
                     <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-warning btn-lg w-100 mt-2 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
                     <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'btn btn-warning btn-lg w-100 mt-2 fw-semibold fs-4 text-body-secondary text-uppercase']) ?>
                     <?= $this->Form->postLink(
@@ -49,6 +48,7 @@ $this->setLayout('default');
                             ['action' => 'delete', $user->id],
                             ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'btn btn-danger btn-lg w-100 mt-4 fw-semibold fs-4 text-white text-uppercase']
                         ) ?>
+                    <?= $this->Form->end() ?>
                 </div>
             </div>
         </div>
