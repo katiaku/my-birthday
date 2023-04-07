@@ -9,7 +9,7 @@ $this->setLayout('default');
 <div class="users index content border border-2 border-success shadow">
     <h3 class="text-center fw-bold fs-1 text-success"><?= __('Users') ?><span> </span><i class="bi bi-people-fill"></i></h3>
     <div class="table-responsive">
-        <table class="table table-borderless table-hover mt-4">
+        <table class="table table-borderless table-hover mt-4 text-secondary">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
@@ -20,7 +20,7 @@ $this->setLayout('default');
                     <th><?= $this->Paginator->sort('birthDate') ?></th>
                     <th><?= $this->Paginator->sort('color') ?></th>
                     <th><?= $this->Paginator->sort('is_active') ?></th>
-                    <th class="actions text-body-secondary"><?= __('Actions') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
