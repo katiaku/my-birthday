@@ -6,7 +6,7 @@ The CakePHP Birthday Planner and Task Manager for Kids is a web application desi
 their children's birthday parties. The app provides an intuitive interface that allows users to organize party details
 including lists of guests and presents.
 
-<img src="webroot/img/welcome-login.png" alt="welcome-login" width="350" height="200">
+<img src="./webroot/img/welcome_login.png" alt="Welcome and login">
 
 ## Installation and Configuration
 
