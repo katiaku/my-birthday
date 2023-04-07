@@ -6,7 +6,7 @@
 $this->setLayout('default');
 ?>
 
-<h1 class="text-center fw-bold text-body-secondary">Welcome to your <span style="color: #FFC007">birthday planner <i class="bi bi-gift-fill"></i></span></h1>
+<h1 class="text-center fw-bold pt-5 mt-5 pb-5" style="color: #5620a5">Welcome to your birthday planner <i class="bi bi-gift-fill"></i></h1>
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
