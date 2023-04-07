@@ -7,7 +7,7 @@ $this->setLayout('default');
 ?>
 
 <div class="birthdayGuests index content border border-2 border-success shadow">
-    <h3 class="text-center fw-bold fs-1 text-success"><?= __('Birthday Guests') ?></h3>
+    <h3 class="text-center fw-bold fs-1 text-success"><?= __('Birthday Guests') ?><span> </span><i class="bi bi-person-check-fill"></i></h3>
     <div class="table-responsive">
         <table class="table table-borderless table-hover mt-4">
             <thead>
